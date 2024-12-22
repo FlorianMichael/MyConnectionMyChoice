@@ -39,7 +39,7 @@ public final class MyConnectionMyChoice implements ClientModInitializer, ModMenu
 
     private final Logger logger = LogManager.getLogger("MyConnectionMyChoice");
     private final Path config = FabricLoader.getInstance().getConfigDir().resolve("mcmc.json");
-    private final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     private boolean keepConnectionInConfirmScreen = false;
     private boolean hideTransferConnectionIntent = false;
@@ -51,7 +51,7 @@ public final class MyConnectionMyChoice implements ClientModInitializer, ModMenu
 
         if (Files.exists(config)) {
             try {
-                final JsonObject object = GSON.fromJson(Files.readString(config), JsonObject.class);
+                final JsonObject object = gson.fromJson(Files.readString(config), JsonObject.class);
                 keepConnectionInConfirmScreen = object.get("keepConnectionInConfirmScreen").getAsBoolean();
                 hideTransferConnectionIntent = object.get("hideTransferConnectionIntent").getAsBoolean();
                 clearCookiesOnTransfer = object.get("clearCookiesOnTransfer").getAsBoolean();
@@ -69,7 +69,7 @@ public final class MyConnectionMyChoice implements ClientModInitializer, ModMenu
             object.addProperty("hideTransferConnectionIntent", hideTransferConnectionIntent);
             object.addProperty("clearCookiesOnTransfer", clearCookiesOnTransfer);
 
-            Files.writeString(config, GSON.toJson(object), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+            Files.writeString(config, gson.toJson(object), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
         } catch (IOException e) {
             logger.error("Failed to create file: {}!", config.toString(), e);
         }
