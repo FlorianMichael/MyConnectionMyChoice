@@ -1,56 +1,31 @@
-# BaseProject
-Gradle template project with jar signing, publishing to maven central and GitHub workflows.
+# MyConnectionMyChoice
+Fabric mod allowing you to deny and fabricate server transfers.
 
-## Setup the required environment variables
-You need to add the following environment variables to your gradle.properties file, which is located in the .gradle folder
-in your home directory.
+## Features
 
-```properties
-# Signing properties, see https://docs.gradle.org/current/userguide/signing_plugin.html#sec:signatory_credentials
-signing.keyId=<the last 8 digits of your key id>
-signing.password=<your key password>
-signing.secretKeyRingFile=<path to your keyring file>
+![Preview](.github/images/preview.png)
 
-# Reposilite credentials (In case you want to publish to a reposilite instance)
-reposiliteUsername=<your account name>
-reposilitePassword=<your account password>
+### Settings
 
-# Maven central credentials (In case you want to publish to maven central)
-# See https://central.sonatype.org/publish/publish-maven-gradle/
-# This will also require to set up the signing properties
-ossrhUsername=<your account name>
-ossrhPassword=<your account password> # This is an access token nowadays
-```
+![Settings](.github/images/settings.png)
 
-## Publishing
-Use `./gradlew publishAllPublicationsToOssrhRepository` to publish to maven central.
+**Keep connection in confirm screen**
 
-Use `./gradlew publishAllPublicationsToReposiliteRepository` to publish to a reposilite instance.
+If enabled, the connection will be kept while you are in the confirm screen. If disabled, the connection will be closed before opening the confirm screen. Note that enabling this option may cause issues with some servers.
 
-Use `./gradlew publish` to publish to both.
+**Hide transfer connection intent**
 
-## Building
-Use `./gradlew clean build` to build the project.
+If enabled, the connection intent will be set as LOGIN which makes the server think you are connecting directly to it.
 
-## Final steps
-- Change all mentions of `BaseProject` to your project name.
-- Change the maven coordinates in the `gradle.properties` file.
-- Change the author/email in all files. (Replace `FlorianMichael/EnZaXD` with your own name, ...)
-- Update the license header located in `.idea/copyright/Apache_2_0.xml`
-- Update the publishing section in the build.gradle file.
-- Delete the all sections between the `Setup the required environment variables` and `Final steps` sections.
-- Update the `How to add this to your project` section to only mention the repositories you are publishing to.
+**Clear cookies on transfer**
 
-# Why another base project?
-I wanted to have a template project for my own projects, which I can use to quickly start a new project.
+If enabled, the cookies will be cleared when you are transferred to another server.
+
+## Downloads
+
+Modrinth - https://modrinth.com/mod/myconnectionmychoice
+
+Curseforge - https://curseforge.com/minecraft/mc-mods/myconnectionmychoice
 
 ## Contact
-If you encounter any issues, please report them on the [issue tracker](https://github.com/FlorianMichael/BaseProject/issues). If you just want to talk or need help with BaseProject feel free to join my [Discord](https://discord.gg/BwWhCHUKDf).
-
-## How to add this to your project
-### Gradle/Maven
-To use BaseProject with Gradle/Maven you can use [Maven Central](https://mvnrepository.com/artifact/de.florianmichael/BaseProject), [Lenni0451's Maven](https://maven.lenni0451.net/#/releases/de/florianmichael/BaseProject) or [Jitpack](https://jitpack.io/#FlorianMichael/BaseProject).  
-You can also find instructions how to implement it into your build script there.
-
-### Jar File
-If you just want the latest jar file you can download it from the GitHub [Actions](https://github.com/FlorianMichael/BaseProject/actions) or use the [Release](https://github.com/FlorianMichael/BaseProject/releases).
+If you encounter any issues, please report them on the [issue tracker](https://github.com/FlorianMichael/MyConnectionMyChoice/issues). If you just want to talk or need help with MyConnectionMyChoice feel free to join my [Discord](https://discord.gg/BwWhCHUKDf).

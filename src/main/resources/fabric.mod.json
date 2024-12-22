@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "mcmc",
+  "version": "${version}",
+  "name": "MyConnectionMyChoice",
+  "description": "${description}",
+  "authors": [
+    {
+      "name": "FlorianMichael/EnZaXD",
+      "contact": {
+        "email": "florian.michael07@gmail.com",
+        "homepage": "https://github.com/FlorianMichael"
+      }
+    }
+  ],
+  "contributors": [
+    {
+      "name": "GitHub contributors",
+      "contact": {
+        "homepage": "https://github.com/ViaVersion/ViaFabricPlus/graphs/contributors"
+      }
+    }
+  ],
+  "contact": {
+    "homepage": "https://florianmichael.de/",
+    "sources": "https://github.com/FlorianMichael/MyConnectionMyChoice",
+    "issues": "https://github.com/FlorianMichael/MyConnectionMyChoice/issues",
+    "email": "florian.michael07@gmail.com"
+  },
+  "license": "GPL-v3",
+  "icon": "assets/mcmc/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [ "de.florianmichael.mcmc.MyConnectionMyChoice" ],
+    "modmenu": [ "de.florianmichael.mcmc.MyConnectionMyChoice" ]
+  },
+  "mixins": [
+    "mcmc.mixins.json"
+  ],
+  "depends": {
+    "minecraft": "${mcVersion}",
+    "java": ">=21"
+  }
+}
