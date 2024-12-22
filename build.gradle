@@ -2,7 +2,8 @@ plugins {
     id "java"
     id "maven-publish"
     id "signing"
-    //id "idea"
+    id "idea"
+    id "fabric-loom" version "1.9-SNAPSHOT"
 }
 
 base {
@@ -12,28 +13,23 @@ base {
     description = project.maven_description
 }
 
-configurations {
-    api.extendsFrom library
-}
-
 repositories {
     mavenCentral()
+    maven {
+        name = "TerraformersMC"
+        url = "https://maven.terraformersmc.com/releases"
+    }
 }
 
 dependencies {
-    // Add for unit testing
-    // testImplementation platform("org.junit:junit-bom:5.10.3")
-    // testImplementation "org.junit.jupiter:junit-jupiter"
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_version}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    // Add your dependencies here
-    // Example: implementation "org.apache.commons:commons-lang3:3.14.0"
-    // You can use library "org.apache.commons:commons-lang3:3.14.0" to include the dependency in the jar file as well
+    modCompileOnly "com.terraformersmc:modmenu:12.0.0"
 }
 
 java {
-    withSourcesJar()
-    withJavadocJar()
-
     toolchain {
         languageVersion = JavaLanguageVersion.of(21)
     }
@@ -42,25 +38,25 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 }
 
-
-jar {
-    // Add all dependencies which are included using "library" to the jar file and exclude the META-INF folder
-    dependsOn configurations.library
-    from {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        configurations.library.collect {
-            zipTree(it)
-        }
-    } {
-        exclude "META-INF/*.RSA", "META-INF/*.SF", "META-INF/*.DSA"
-    }
-
-    manifest {
-        attributes(
-                "Main-Class": "de.florianmichael.baseproject.Example"
+processResources {
+    filesMatching("fabric.mod.json") {
+        expand(
+                "version": project.version,
+                "description": project.description,
+                "mcVersion": mcVersion()
         )
     }
+}
 
+String mcVersion() {
+    if (project.supported_versions.isEmpty()) {
+        return project.minecraft_version
+    } else {
+        return project.supported_versions
+    }
+}
+
+jar {
     // Rename the project's license file to LICENSE_<project_name> to avoid conflicts
     from("LICENSE") {
         rename {
@@ -69,23 +65,13 @@ jar {
     }
 }
 
-// Add for unit testing
-//test {
-//    useJUnitPlatform()
-//    testLogging {
-//        events "passed", "skipped", "failed"
-//    }
-//    maxParallelForks Runtime.runtime.availableProcessors()
-//}
-
-// Uncomment to exclude specific folders from Intellij's indexing
-//idea {
-//    module {
-//        ["run"].each {
-//            excludeDirs << file("$it")
-//        }
-//    }
-//}
+idea {
+    module {
+        ["run"].each {
+            excludeDirs << file("$it")
+        }
+    }
+}
 
 publishing {
     repositories {
@@ -121,11 +107,11 @@ publishing {
             pom {
                 name = artifactId
                 description = project.description
-                url = "https://github.com/FlorianMichael/BaseProject"
+                url = "https://github.com/FlorianMichael/MyConnectionMyChoice"
                 licenses {
                     license {
-                        name = "Apache-2.0 license"
-                        url = "https://github.com/FlorianMichael/BaseProject/blob/main/LICENSE"
+                        name = "GPL-3.0 License"
+                        url = "https://github.com/FlorianMichael/MyConnectionMyChoice/blob/main/LICENSE"
                     }
                 }
                 developers {
@@ -136,9 +122,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "scm:git:git://github.com/FlorianMichael/BaseProject.git"
-                    developerConnection = "scm:git:ssh://github.com/FlorianMichael/BaseProject.git"
-                    url = "github.com/FlorianMichael/BaseProject"
+                    connection = "scm:git:git://github.com/FlorianMichael/MyConnectionMyChoice.git"
+                    developerConnection = "scm:git:ssh://github.com/FlorianMichael/MyConnectionMyChoice.git"
+                    url = "github.com/FlorianMichael/MyConnectionMyChoice"
                 }
             }
         }

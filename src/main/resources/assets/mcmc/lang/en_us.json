@@ -1,0 +1,22 @@
+{
+  "modmenu.descriptionTranslation.viafabricplus": "Fabric mod allowing you to deny and fabricate server transfers.",
+
+  "base.mcmc.on": "On",
+  "base.mcmc.off": "Off",
+  "base.mcmc.screen.title": "Server transfer",
+  "base.mcmc.screen.description": "The server wants to transfer you to: %s",
+  "base.mcmc.screen.accept": "Accept",
+  "base.mcmc.screen.cancel": "Cancel",
+  "base.mcmc.screen.ignore": "Ignore",
+
+  "settings.mcmc.title": "My Connection, My Choice!",
+
+  "settings.mcmc.keepconnectioninconfirmscreen": "Keep connection in confirm screen",
+  "settings.mcmc.keepconnectioninconfirmscreen.description": "If enabled, the connection will be kept while you are in the confirm screen. If disabled, the connection will be closed before opening the confirm screen. Note that enabling this option may cause issues with some servers.",
+
+  "settings.mcmc.hidetransferconnectionintent": "Hide transfer connection intent",
+  "settings.mcmc.hidetransferconnectionintent.description": "If enabled, the connection intent will be set as LOGIN which makes the server think you are connecting directly to it.",
+
+  "settings.mcmc.clearcookiesontransfer": "Clear cookies on transfer",
+  "settings.mcmc.clearcookiesontransfer.description": "If enabled, the cookies will be cleared when you are transferred to another server."
+}

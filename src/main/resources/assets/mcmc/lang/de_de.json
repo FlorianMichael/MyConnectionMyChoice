@@ -1,0 +1,22 @@
+{
+  "modmenu.descriptionTranslation.viafabricplus": "Fabric mod, der es Ihnen erlaubt, Serverübertragungen zu verweigern und zu verändern",
+
+  "base.mcmc.on": "An",
+  "base.mcmc.off": "Aus",
+  "base.mcmc.screen.title": "Server-Übertragung",
+  "base.mcmc.screen.description": "Der Server möchte Sie transferieren zu: %s",
+  "base.mcmc.screen.accept": "Akzeptieren",
+  "base.mcmc.screen.cancel": "Abbrechen",
+  "base.mcmc.screen.ignore": "Ignorieren",
+
+  "settings.mcmc.title": "Meine Verbindung, meine Wahl!",
+
+  "settings.mcmc.keepconnectioninconfirmscreen": "Verbindung im Bestätigungsbildschirm beibehalten",
+  "settings.mcmc.keepconnectioninconfirmscreen.description": "Wenn aktiviert, wird die Verbindung beibehalten, während Sie sich im Bestätigungsbildschirm befinden. Wenn deaktiviert, wird die Verbindung vor dem Öffnen des Bestätigungsbildschirms geschlossen. Beachten Sie, dass die Aktivierung dieser Option bei einigen Servern zu Problemen führen kann.",
+
+  "settings.mcmc.hidetransferconnectionintent": "Absicht der Übertragungsverbindung ausblenden",
+  "settings.mcmc.hidetransferconnectionintent.description": "Wenn aktiviert, wird die Verbindungsabsicht als LOGIN gesetzt, was den Server glauben lässt, dass Sie sich direkt mit ihm verbinden.",
+
+  "settings.mcmc.clearcookiesontransfer": "Cookies bei der Übertragung löschen",
+  "settings.mcmc.clearcookiesontransfer.description": "Wenn aktiviert, werden die Cookies gelöscht, wenn Sie auf einen anderen Server übertragen werden."
+}
