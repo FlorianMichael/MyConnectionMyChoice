@@ -1,0 +1,22 @@
+{
+  "modmenu.descriptionTranslation.viafabricplus": "允许你拒绝或伪造服务器转移的Fabric Mod。",
+
+  "base.mcmc.on": "开",
+  "base.mcmc.off": "关",
+  "base.mcmc.screen.title": "服务器转移",
+  "base.mcmc.screen.description": "服务器想要将你转移至：%s",
+  "base.mcmc.screen.accept": "接受",
+  "base.mcmc.screen.cancel": "取消",
+  "base.mcmc.screen.ignore": "忽略",
+
+  "settings.mcmc.title": "我的连接，我做主！",
+
+  "settings.mcmc.keepconnectioninconfirmscreen": "在确认屏幕中保持连接",
+  "settings.mcmc.keepconnectioninconfirmscreen.description": "如果启用，则在你处于确认屏幕时将保持连接。如果禁用，则在打开确认屏幕之前将关闭连接。请注意，启用此选项可能会导致某些服务器出现问题。",
+
+  "settings.mcmc.hidetransferconnectionintent": "隐藏转移连接意图",
+  "settings.mcmc.hidetransferconnectionintent.description": "如果启用，连接意图将被设为LOGIN，这会让服务器认为你正在直接连接到它。",
+
+  "settings.mcmc.clearcookiesontransfer": "转移时清除Cookie",
+  "settings.mcmc.clearcookiesontransfer.description": "如果启用，当你转移到另一台服务器时，Cookie将被清除。"
+}
