@@ -1,0 +1,22 @@
+{
+  "modmenu.descriptionTranslation.viafabricplus": "允許拒絕或僞造伺服器轉移的 Fabric 模組。",
+
+  "base.mcmc.on": "開",
+  "base.mcmc.off": "關",
+  "base.mcmc.screen.title": "伺服器轉移",
+  "base.mcmc.screen.description": "伺服器想要將你轉移至：%s",
+  "base.mcmc.screen.accept": "接受",
+  "base.mcmc.screen.cancel": "取消",
+  "base.mcmc.screen.ignore": "忽略",
+
+  "settings.mcmc.title": "我的連線，我的選擇！",
+
+  "settings.mcmc.keepconnectioninconfirmscreen": "在確認畫面中保持連線",
+  "settings.mcmc.keepconnectioninconfirmscreen.description": "若啟用，則在確認畫面中時將保持連線。如果禁用，則在打開確認畫面之前將关闭連線。請注意：啟用此設定可能會導致某些伺服器出現錯誤。",
+
+  "settings.mcmc.hidetransferconnectionintent": "隱藏轉移連線意圖",
+  "settings.mcmc.hidetransferconnectionintent.description": "若啟用，轉移意圖將被設爲LOGIN，這會讓伺服器認爲你正在直接連線到它。",
+
+  "settings.mcmc.clearcookiesontransfer": "轉移時清除Cookie",
+  "settings.mcmc.clearcookiesontransfer.description": "若啟用，當你轉移到另一個伺服器時，Cookie將被清除。"
+}
