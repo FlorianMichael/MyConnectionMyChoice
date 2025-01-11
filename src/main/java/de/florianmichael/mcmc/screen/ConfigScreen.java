@@ -50,7 +50,7 @@ public final class ConfigScreen extends Screen {
     private final Screen parent;
 
     public ConfigScreen(final Screen parent) {
-        super(Text.empty());
+        super(Text.translatable("settings.mcmc.title"));
         this.parent = parent;
     }
 
@@ -106,8 +106,6 @@ public final class ConfigScreen extends Screen {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-
-        final Text title = Text.translatable("settings.mcmc.title");
 
         final MatrixStack matrices = context.getMatrices();
         matrices.push();
