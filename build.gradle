@@ -26,7 +26,7 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_version}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-    modCompileOnly "com.terraformersmc:modmenu:13.0.2"
+    modCompileOnly "com.terraformersmc:modmenu:13.0.3"
 }
 
 java {
