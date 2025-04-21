@@ -18,15 +18,15 @@
 
 package de.florianmichael.mcmc.screen;
 
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.datafixers.util.Pair;
 import de.florianmichael.mcmc.MyConnectionMyChoice;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.tooltip.Tooltip;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Pair;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.Button;
+import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -50,7 +50,7 @@ public final class ConfigScreen extends Screen {
     private final Screen parent;
 
     public ConfigScreen(final Screen parent) {
-        super(Text.translatable("settings.mcmc.title"));
+        super(Component.translatable("settings.mcmc.title"));
         this.parent = parent;
     }
 
@@ -62,56 +62,56 @@ public final class ConfigScreen extends Screen {
         for (Map.Entry<String, Pair<Supplier<Boolean>, Consumer<Boolean>>> entry : settings.entrySet()) {
             final String key = entry.getKey().toLowerCase(Locale.ROOT);
 
-            final Text label = Text.translatable("settings.mcmc." + key);
-            final Text description = Text.translatable("settings.mcmc." + key + ".description");
+            final Component label = Component.translatable("settings.mcmc." + key);
+            final Component description = Component.translatable("settings.mcmc." + key + ".description");
 
-            final Supplier<Boolean> supplier = entry.getValue().getLeft();
-            addDrawableChild(ButtonWidget
+            final Supplier<Boolean> supplier = entry.getValue().getFirst();
+            addRenderableWidget(Button
                     .builder(
-                            getButtonText(label, supplier.get()),
+                            getButtonComponent(label, supplier.get()),
                             button -> {
-                                entry.getValue().getRight().accept(!supplier.get());
-                                button.setMessage(getButtonText(label, supplier.get()));
+                                entry.getValue().getSecond().accept(!supplier.get());
+                                button.setMessage(getButtonComponent(label, supplier.get()));
                             }
                     )
-                    .position(this.width / 2 - BUTTON_WIDTH / 2, y)
-                    .size(BUTTON_WIDTH, ButtonWidget.DEFAULT_HEIGHT)
-                    .tooltip(Tooltip.of(description))
+                    .pos(this.width / 2 - BUTTON_WIDTH / 2, y)
+                    .size(BUTTON_WIDTH, Button.DEFAULT_HEIGHT)
+                    .tooltip(Tooltip.create(description))
                     .build());
 
-            y += ButtonWidget.DEFAULT_HEIGHT + PADDING;
+            y += Button.DEFAULT_HEIGHT + PADDING;
         }
 
-        addDrawableChild(ButtonWidget
-                .builder(Text.of("<-"), button -> client.setScreen(parent))
-                .position(PADDING, this.height - ButtonWidget.DEFAULT_HEIGHT - PADDING)
-                .size(ButtonWidget.DEFAULT_HEIGHT, ButtonWidget.DEFAULT_HEIGHT)
+        addRenderableWidget(Button
+                .builder(Component.literal("<-"), button -> minecraft.setScreen(parent))
+                .pos(PADDING, this.height - Button.DEFAULT_HEIGHT - PADDING)
+                .size(Button.DEFAULT_HEIGHT, Button.DEFAULT_HEIGHT)
                 .build());
     }
 
-    private Text getButtonText(final Text label, final boolean value) {
-        final Text onText = Text.translatable("base.mcmc.on");
-        final Text offText = Text.translatable("base.mcmc.off");
+    private Component getButtonComponent(final Component label, final boolean value) {
+        final Component on = Component.translatable("base.mcmc.on");
+        final Component off = Component.translatable("base.mcmc.off");
 
-        return Text
+        return Component
                 .literal("")
                 .append(label)
                 .append(": ")
-                .append(Text.literal("")
-                        .append(value ? onText : offText)
-                        .formatted(value ? Formatting.GREEN : Formatting.RED)
+                .append(Component.literal("")
+                        .append(value ? on : off)
+                        .withStyle(value ? ChatFormatting.GREEN : ChatFormatting.RED)
                 );
     }
 
     @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        super.render(context, mouseX, mouseY, delta);
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+        super.render(guiGraphics, mouseX, mouseY, partialTick);
 
-        final MatrixStack matrices = context.getMatrices();
-        matrices.push();
-        matrices.scale(2.0F, 2.0F, 2.0F);
-        context.drawText(client.textRenderer, title, this.width / 4 - client.textRenderer.getWidth(title) / 2, 5, -1, true);
-        matrices.pop();
+        final PoseStack pose = guiGraphics.pose();
+        pose.pushPose();
+        pose.scale(2.0F, 2.0F, 2.0F);
+        guiGraphics.drawString(font, title, this.width / 4 - font.width(title) / 2, 5, -1, true);
+        pose.popPose();
     }
 
 }
