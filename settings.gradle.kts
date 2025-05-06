@@ -8,7 +8,7 @@ pluginManagement {
 
     plugins {
         id("fabric-loom") version "1.10-SNAPSHOT"
-        id("de.florianmichael.baseproject.BaseProject") version "0.0.2"
+        id("de.florianmichael.baseproject.BaseProject") version "0.0.3"
     }
 }
 
