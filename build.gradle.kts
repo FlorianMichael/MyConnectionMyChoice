@@ -7,7 +7,7 @@ plugins {
 
 setupProject()
 setupFabric()
-coreFabricApiModules()
+loadCoreFabricApiModules()
 
 repositories {
     maven("https://maven.terraformersmc.com/releases")
