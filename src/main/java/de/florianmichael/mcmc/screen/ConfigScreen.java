@@ -18,7 +18,6 @@
 
 package de.florianmichael.mcmc.screen;
 
-import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.datafixers.util.Pair;
 import de.florianmichael.mcmc.MyConnectionMyChoice;
 import net.minecraft.ChatFormatting;
@@ -27,6 +26,7 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import org.joml.Matrix3x2fStack;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -107,11 +107,11 @@ public final class ConfigScreen extends Screen {
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         super.render(guiGraphics, mouseX, mouseY, partialTick);
 
-        final PoseStack pose = guiGraphics.pose();
-        pose.pushPose();
-        pose.scale(2.0F, 2.0F, 2.0F);
+        final Matrix3x2fStack pose = guiGraphics.pose();
+        pose.pushMatrix();
+        pose.scale(2.0F, 2.0F);
         guiGraphics.drawString(font, title, this.width / 4 - font.width(title) / 2, 5, -1, true);
-        pose.popPose();
+        pose.popMatrix();
     }
 
 }

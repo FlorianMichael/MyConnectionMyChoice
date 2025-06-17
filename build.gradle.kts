@@ -14,5 +14,5 @@ repositories {
 }
 
 dependencies {
-    modImplementation("com.terraformersmc:modmenu:14.0.0-rc.2")
+    modImplementation("com.terraformersmc:modmenu:15.0.0-beta.1")
 }
