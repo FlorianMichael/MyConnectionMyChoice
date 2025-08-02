@@ -28,4 +28,4 @@ Modrinth - https://modrinth.com/mod/myconnectionmychoice
 Curseforge - https://curseforge.com/minecraft/mc-mods/myconnectionmychoice
 
 ## Contact
-If you encounter any issues, please report them on the [issue tracker](https://github.com/FlorianMichael/MyConnectionMyChoice/issues). If you just want to talk or need help with MyConnectionMyChoice feel free to join my [Discord](https://discord.gg/BwWhCHUKDf).
+If you encounter any issues, please report them on the [issue tracker](https://github.com/FlorianMichael/MyConnectionMyChoice/issues). If you just want to talk or need help with MyConnectionMyChoice feel free to join my [Discord](https://florianmichael.de/discord).
