@@ -21,20 +21,16 @@ package de.florianmichael.mcmc;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.terraformersmc.modmenu.api.ConfigScreenFactory;
-import com.terraformersmc.modmenu.api.ModMenuApi;
-import de.florianmichael.mcmc.screen.ConfigScreen;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardOpenOption;
-
-public final class MyConnectionMyChoice implements ClientModInitializer, ModMenuApi {
+public final class MyConnectionMyChoice implements ClientModInitializer {
 
     private /*final*/ static MyConnectionMyChoice INSTANCE;
 
@@ -74,11 +70,6 @@ public final class MyConnectionMyChoice implements ClientModInitializer, ModMenu
         } catch (IOException e) {
             logger.error("Failed to create file: {}!", config.toString(), e);
         }
-    }
-
-    @Override
-    public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return ConfigScreen::new;
     }
 
     public boolean keepConnectionInConfirmScreen() {

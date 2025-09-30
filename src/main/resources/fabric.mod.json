@@ -32,7 +32,7 @@
   "environment": "client",
   "entrypoints": {
     "client": [ "de.florianmichael.mcmc.MyConnectionMyChoice" ],
-    "modmenu": [ "de.florianmichael.mcmc.MyConnectionMyChoice" ]
+    "modmenu": [ "de.florianmichael.mcmc.screen.ModMenuScreenFactory" ]
   },
   "mixins": [
     "mcmc.mixins.json"
