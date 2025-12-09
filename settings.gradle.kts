@@ -1,14 +1,13 @@
 pluginManagement {
     repositories {
-        mavenLocal()
         mavenCentral()
         gradlePluginPortal()
         maven("https://maven.fabricmc.net/")
     }
 
     plugins {
-        id("fabric-loom") version "1.12-SNAPSHOT"
-        id("de.florianmichael.baseproject.BaseProject") version "1.2.5"
+        id("fabric-loom") version "1.13-SNAPSHOT"
+        id("de.florianmichael.baseproject.BaseProject") version "1.2.8"
     }
 }
 

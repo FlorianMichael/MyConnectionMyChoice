@@ -7,6 +7,7 @@ plugins {
 
 setupProject()
 setupFabric()
+setupPublishing()
 includeFabricApiModules("fabric-api-base", "fabric-resource-loader-v0", "fabric-screen-api-v1", "fabric-key-binding-api-v1", "fabric-lifecycle-events-v1")
 
 repositories {

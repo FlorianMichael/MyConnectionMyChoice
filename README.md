@@ -1,4 +1,5 @@
 # MyConnectionMyChoice
+
 Fabric mod allowing you to deny and fabricate server transfers.
 
 ## Features
@@ -11,7 +12,8 @@ Fabric mod allowing you to deny and fabricate server transfers.
 
 **Keep connection in confirm screen**
 
-If enabled, the connection will be kept while you are in the confirm screen. If disabled, the connection will be closed before opening the confirm screen. Note that enabling this option may cause issues with some servers.
+If enabled, the connection will be kept while you are in the confirm screen. If disabled, the connection will be closed
+before opening the confirm screen. Note that enabling this option may cause issues with some servers.
 
 **Hide transfer connection intent**
 
@@ -27,5 +29,17 @@ Modrinth - https://modrinth.com/mod/myconnectionmychoice
 
 Curseforge - https://curseforge.com/minecraft/mc-mods/myconnectionmychoice
 
+Dev builds - https://build.florianmichael.de/job/MyConnectionMyChoice/
+
+## Use in Gradle
+
+To use MyConnectionMyChoice with Gradle you can
+use [the Maven Central repository](https://mvnrepository.com/artifact/de.florianmichael/MyConnectionMyChoice)
+or [my own repository](https://maven.florianmichael.de/#/releases/de/florianmichael/MyConnectionMyChoice).  
+You will find instructions on how to add it into your build script there.
+
 ## Contact
-If you encounter any issues, please report them on the [issue tracker](https://github.com/FlorianMichael/MyConnectionMyChoice/issues). If you just want to talk or need help with MyConnectionMyChoice feel free to join my [Discord](https://florianmichael.de/discord).
+
+If you encounter any issues, please report them on
+the [issue tracker](https://github.com/FlorianMichael/MyConnectionMyChoice/issues). If you just want to talk or need
+help with MyConnectionMyChoice feel free to join my [Discord](https://florianmichael.de/discord).
