@@ -29,13 +29,12 @@ Modrinth - https://modrinth.com/mod/myconnectionmychoice
 
 Curseforge - https://curseforge.com/minecraft/mc-mods/myconnectionmychoice
 
-Dev builds - https://build.florianmichael.de/job/MyConnectionMyChoice/
+Dev builds - https://build.florianmichael.de/job/MyConnectionMyChoice
 
 ## Use in Gradle
 
 To use MyConnectionMyChoice with Gradle you can
-use [the Maven Central repository](https://mvnrepository.com/artifact/de.florianmichael/MyConnectionMyChoice)
-or [my own repository](https://maven.florianmichael.de/#/releases/de/florianmichael/MyConnectionMyChoice).  
+use [my own repository](https://maven.florianmichael.de/#/releases/de/florianmichael/MyConnectionMyChoice).  
 You will find instructions on how to add it into your build script there.
 
 ## Contact
