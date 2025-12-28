@@ -1,6 +1,6 @@
 /*
  * This file is part of MyConnectionMyChoice - https://github.com/FlorianMichael/MyConnectionMyChoice
- * Copyright (C) 2024-2025 FlorianMichael/EnZaXD <florian.michael07@gmail.com> and contributors
+ * Copyright (C) 2024-2026 FlorianMichael/EnZaXD <git@florianmichael.de> and contributors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
